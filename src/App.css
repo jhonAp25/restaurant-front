@@ -1,0 +1,61 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  height: auto !important;
+}
+/****************** HEADER ********************/
+
+.header_logo{
+  margin-top: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/***************DIVIDER**************************/
+.divider_custom span{
+  color: #072F48;
+  
+}
+.divider_custom::after{
+  border-top: 1px solid #072F48 !important;
+}
+
+.divider_custom::before{
+  border-top: 1px solid #072F48!important;
+}
+
+/*********************MESA******************************/
+.item_mesa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  font-size: 15px;
+  font-weight: bold;
+  width: 180px;
+  height: 180px;
+}
+.col_item_mesa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mesa_ocupado{
+  background-color: #fc365a5d;
+  border: 2px solid #FC3659;
+  color:  #FC3659;
+  cursor: pointer;
+}
+.mesa_ocupado:hover{background-color: #fc365a80;}
+.mesa_disponible{
+  background-color: #36b8a94f;
+  border: 2px solid #36B8A8;
+  color:  #36B8A8;
+  cursor: pointer;
+}
+.mesa_disponible:hover{background-color: #36b8a980;}
