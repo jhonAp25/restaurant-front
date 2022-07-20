@@ -6,6 +6,12 @@
 body{
   height: auto !important;
 }
+
+.scroll{
+  overflow-y: auto;
+  max-height: 541px;
+}
+
 /****************** HEADER ********************/
 
 .header_logo{
@@ -39,6 +45,7 @@ body{
   font-weight: bold;
   width: 180px;
   height: 180px;
+  position: relative;
 }
 .col_item_mesa{
   display: flex;
@@ -51,7 +58,18 @@ body{
   color:  #FC3659;
   cursor: pointer;
 }
-.mesa_ocupado:hover{background-color: #fc365a80;}
+.mesa_disponible .icon_active{
+  display: none;
+}
+
+.mesa_ocupado .icon_active{
+  display: block;
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+}
+
+
 .mesa_disponible{
   background-color: #36b8a94f;
   border: 2px solid #36B8A8;
@@ -59,3 +77,92 @@ body{
   cursor: pointer;
 }
 .mesa_disponible:hover{background-color: #36b8a980;}
+
+/*************** ITEM PALTO ******************/
+
+.card_plato{
+  border-radius: 10px;
+  width: 220px;
+  min-height: 286px;
+  overflow: hidden;
+  box-shadow: 0px 7px 13px 1px #072f486b;
+}
+.card_image img{
+  width: 100%;
+  max-height: 146px;
+  object-fit: cover;
+  transition: all 200ms;
+}
+.card_plato:hover .card_image img{
+  transform: scale(1.1);
+}
+.card_content{
+  color: #072F48;
+  padding: 10px;
+}
+.card_content .title{
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.card_content .descripcion{
+  margin-top: 2%;
+  font-size: 10px;
+  font-style: italic;
+  color: #072f48a6;
+}
+.card_content .precio{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/*************CARD DETALLE *******************/
+.card_detalle{
+  width: 100%;
+  max-height: 60px;
+  display: flex;
+  position: relative;
+  box-shadow: 0px 7px 13px 1px #072f486b;
+  border-radius: 0 10px 10px 0;
+ 
+}
+.detalle_image{
+  width: 30%;
+  max-height: 60px;
+  background-color: #36B8A8;
+
+}
+.detalle_image img{
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border: 6px solid white;
+}
+.detalle_descripcion{
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #072F48;
+}
+
+
+.icon_delete{
+  position: absolute;
+  top: -0.8rem;
+  right: -0.8rem;
+  cursor: pointer;
+}
+.icon_delete:hover{
+  color: #072F48 !important;
+}
+
+/*********************BOLETA********************/
+.boleta_detalle{
+  background-color: #072f482d;
+  min-height: 500px;
+  border: 1px dashed #072F48;
+  color: #072F48;
+  padding: 3%;
+}

@@ -7,7 +7,7 @@ const PageMesa = () => {
   return (
     <div>
         <Header></Header>
-        <DividerCustom titulo={"MESAA"} />
+        <DividerCustom titulo={"Mesas Disponibles de Hoy"} />
         <GridMesas/>
     </div>
   )
