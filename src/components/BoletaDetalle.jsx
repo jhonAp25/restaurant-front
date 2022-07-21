@@ -1,6 +1,8 @@
 import React from 'react'
 import {Button, Divider} from 'antd'
 import { useNavigate, useParams } from 'react-router-dom'
+import toaster from 'react-hot-toast'
+
 
 const BoletaDetalle = ({detalle, putPedido}) => {
 
@@ -9,8 +11,13 @@ const BoletaDetalle = ({detalle, putPedido}) => {
     const navigate = useNavigate()
 
     const EnvioPedido=()=>{
-        putPedido(total)
-        navigate("../mesa", { replace: true });
+        if(total === 0){
+            toaster.error("Agrege un plato ")
+        }else{
+            putPedido(total)
+            navigate("../mesa", { replace: true });
+        }
+        
     }
 
   return (
