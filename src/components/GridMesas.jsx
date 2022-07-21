@@ -17,7 +17,7 @@ const GridMesas = () => {
   const escogerMesa=(id)=>{
     updateEstadoMesa(id, false)
     localStorage.setItem('idMesa', id)
-
+    
     
   }
 
@@ -32,14 +32,14 @@ useEffect(() => {
         <Row gutter={[0, 48]}>
           {mesa.map(m=>(
             
-              <Col key={m.id} className="gutter-row col_item_mesa"  span={4} onClick={()=>escogerMesa(m.id)} >
+              <Col key={m.id} className="gutter-row col_item_mesa"  span={4}  >
                 {m.estado ? 
-                <Link  to={m.nroMesa.toString()} >
-                  <ItemMesa  data={m} updateEstadoMesa={updateEstadoMesa} />
+                <Link onClick={()=>escogerMesa(m.id)}  to={m.nroMesa.toString()} >
+                  <ItemMesa  data={m}  />
                 </Link>
                :
                
-                  <ItemMesa  data={m} updateEstadoMesa={updateEstadoMesa} />
+                <ItemMesa  data={m} updateEstadoMesa={updateEstadoMesa} />
              
                 }
                

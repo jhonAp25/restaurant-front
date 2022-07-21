@@ -34,7 +34,7 @@ const BoletaDetalle = ({detalle, putPedido}) => {
                 
                 <span>S/. {d.plato.precio}.00</span>
                 </div>
-            ))}
+            ))} 
             
 
 
