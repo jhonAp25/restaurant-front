@@ -13,35 +13,9 @@ const PlatoProvider = ({children}) => {
     
     /********* STATES ************ */
     const [ plato , setPlato] = useState([])
-  //  const [evento , setEvento] =useState([])
 
 
-    
-/************************* P O S T *******************************/ 
-
-  /*  const postClase= async (dat,idDisciplina, dateTime)=>{   
-        await axios.post(url +'clase/realizar', {
-            cuposmax: dat.cuposMax,
-            disciplina: idDisciplina,
-            plato: dat.plato,
-            trainer: dat.trainer,
-            horaFin: dateTime.fechaFin,
-            horaIni: dateTime.fechaIni,
-
-        }).then((response)=>{
-        
-          toast.success('Nueva Clase  Creada! ✔'); 
-       
-         console.log(response);
-         
-         
-        }).catch((error)=>{
-          console.log(error);       
-        })
-      }
-*/
-
-    /********************** G E T -- S A L O N  ********************************* */
+    /********************** G E T --P L A T O  ********************************* */
 
       const getPlato= async ()=>{   
         await axios.get(url +'plato').then(({data})=>{

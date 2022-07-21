@@ -1,6 +1,7 @@
 import 'antd/dist/antd.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { LoginProvider } from './context/LoginContext';
 import { MesaProvider } from './context/MesaContext';
 import { PedidoProvider } from './context/PedidoContext';
 import { PlatoProvider } from './context/PlatoContext';
@@ -12,10 +13,13 @@ import Notificacion from './util/Notificacion';
 
 function App() {
   return (
+   
     <PedidoProvider>
     <MesaProvider>
       <PlatoProvider>
+      
     <BrowserRouter>
+    <LoginProvider>
     <Notificacion/>
     <Routes>
       <Route path='/' element={<PageLogin/>} />
@@ -27,11 +31,13 @@ function App() {
       
     </Routes>
        
-
+ </LoginProvider>
   </BrowserRouter>
+ 
   </PlatoProvider>
   </MesaProvider>
   </PedidoProvider>
+  
   );
 }
 
