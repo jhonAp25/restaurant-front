@@ -2,7 +2,7 @@ import React,{useEffect , useState} from 'react'
 
 import axios from 'axios';
 import {url} from '../util/Constante'
-
+import   toaster  from "react-hot-toast";
 
 
 let MesaContext = React.createContext();
@@ -62,6 +62,7 @@ const MesaProvider = ({children}) => {
           
         }).then(({data})=>{
           getMesa()
+          toaster.success('Mesa actualizada')
         }).catch((error)=>{
         
           console.log(error.response);

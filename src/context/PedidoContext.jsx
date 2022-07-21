@@ -1,8 +1,8 @@
-import React,{useEffect , useState} from 'react'
+import React,{ useState} from 'react'
 
 import axios from 'axios';
 import {url} from '../util/Constante'
-import { useNavigate } from 'react-router-dom';
+import toaster from 'react-hot-toast'
 
 
 
@@ -42,7 +42,7 @@ const PedidoProvider = ({children}) => {
         localStorage.removeItem('idPedido')
         localStorage.removeItem('idMesa')
         
-
+        toaster.success("Pedido enviado !!")
        }).catch((error)=>{
          console.log(error);       
        })
@@ -103,8 +103,11 @@ const PedidoProvider = ({children}) => {
         const deleteDetallePedido=(idDetalle)=>{
             axios.delete(url+ 'detallePedido/'+ idDetalle )
             .then(({data})=>{
-                console.log(data);
+              toaster('Pedido Eliminado!', {
+                icon: '❌',
+              });
                 getDetallePedido()
+
               }).catch((error)=>{
               
                 console.log(error.response);

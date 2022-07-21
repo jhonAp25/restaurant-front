@@ -8,6 +8,7 @@ import PageLogin from './pages/PageLogin';
 import PageMesa from './pages/PageMesa';
 import PagePedido from './pages/PagePedido';
 import PagePlatos from './pages/PagePlatos';
+import Notificacion from './util/Notificacion';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
     <MesaProvider>
       <PlatoProvider>
     <BrowserRouter>
+    <Notificacion/>
     <Routes>
       <Route path='/' element={<PageLogin/>} />
       <Route path="/mesa" element={<PageMesa />} />

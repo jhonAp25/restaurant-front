@@ -4,18 +4,19 @@ import { Row , Col} from 'antd';
 import ItemPlato from './ItemPlato';
 import { Link } from 'react-router-dom';
 import { PedidoContext } from '../context/PedidoContext';
+import toaster from 'react-hot-toast'
 
 const GridPlatos = () => {
 
     
   const {plato, getPlato} = useContext(PlatoContext)
   const {postPedido, postDetallePedido} = useContext(PedidoContext)
-
+  
 
   const agregarPlato=(idPlato)=>{
-   // postPedido()
-    
     postDetallePedido(idPlato , localStorage.getItem('idMesa') )
+
+    toaster.success('Plato Agregado')
   }
 
 
